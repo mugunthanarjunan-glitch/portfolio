@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mugunthan Arjunan | MERN Stack developer</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2220%22 fill=%22black%22/><text y=%2270%22 x=%2250%22 text-anchor=%22middle%22 font-family=%22Arial, sans-serif%22 font-weight=%22bold%22 font-size=%2260%22 fill=%22white%22>MA</text></svg>">
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700;800&display=swap"
+        rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- Custom Cursor -->
+    <div class="cursor-glow" id="cursor-glow"></div>
+
+    <!-- Scroll Progress Indicator -->
+    <div class="scroll-progress" id="scroll-progress"></div>
+
+    <!-- Background Animation Elements -->
+    <div class="bg-animate">
+        <div class="circle circle-1"></div>
+        <div class="circle circle-2"></div>
+        <div class="circle circle-3"></div>
+    </div>
+
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="#" class="logo">Mugunthan Arjunan</a>
+            <ul class="nav-links">
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#certificates" class="nav-link">Certificates</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="nav-toggle" id="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero" id="home">
+        <div class="container hero-container">
+            <div class="hero-content">
+
+                <h2 class="hero-greeting reveal-load">Hi, I'm</h2>
+                <h1 class="hero-name reveal-load">Mugunthan Arjunan</h1>
+                <h3 class="hero-title reveal-load">
+                    <span class="typing" id="typing-text"></span>
+                </h3>
+                <p class="hero-tagline reveal-load">I build scalable and intelligent web applications focused on
+                    performance and modern logic.</p>
+                <div class="hero-btns reveal-load">
+                    <a href="#projects" class="btn btn-primary glow-cyan">Explore My Work</a>
+                    <a href="MUGUNTHAN%20ARJUNAN%20CV.pdf" class="btn btn-secondary glow-purple" download>Download
+                        Resume</a>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-down">
+            <a href="#about">
+                <span>Scroll Down</span>
+                <i class="fas fa-chevron-down"></i>
+            </a>
+        </div>
+    </header>
+
+    <section class="about section" id="about">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2 class="section-title">About Me</h2>
+                <p class="section-subtitle">Blending creativity with engineering logic</p>
+            </div>
+            <div class="about-grid">
+                <div class="about-img reveal">
+                    <div class="glass-card img-wrapper">
+                        <img src="profile.jpg" alt="Mugunthan">
+                        <div class="img-glow"></div>
+                    </div>
+                </div>
+                <div class="about-content">
+                    <div class="reveal">
+                        <h3>Full Stack Developer & MERN Engineer</h3>
+                        <p>I specialize in building robust backend architectures and sleek, interactive frontends using
+                            the MERN stack. My approach combines systematic problem solving with a keen eye for
+                            futuristic design.</p>
+                    </div>
+                    <div class="reveal">
+                        <p>Currently focused on developing advanced systems like a <strong>Workflow Automation
+                                System</strong> and an <strong>Exam Hall Allocation System</strong>, where I push the
+                            limits of Node.js and MongoDB optimization.</p>
+                    </div>
+                    <div class="about-badges reveal">
+                        <span class="badge">Backend Logic</span>
+                        <span class="badge">Problem Solving</span>
+                        <span class="badge">MERN Stack</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="skills section" id="skills">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2 class="section-title">Technical Mastery</h2>
+            </div>
+            <div class="skills-grid">
+                <div class="skill-card reveal fade-up stagger">
+                    <i class="fab fa-html5 skill-icon cyan html"></i>
+                    <h4>HTML</h4>
+                </div>
+                <div class="skill-card reveal fade-up stagger">
+                    <i class="fab fa-css3-alt skill-icon purple CSS"></i>
+                    <h4>CSS</h4>
+                </div>
+                <div class="skill-card reveal fade-up stagger">
+                    <i class="fab fa-js skill-icon JS"></i>
+                    <h4>JavaScript</h4>
+                </div>
+                <div class="skill-card reveal fade-up stagger">
+                    <i class="fab fa-node-js skill-icon node"></i>
+                    <h4>Node.js</h4>
+                </div>
+                <div class="skill-card reveal fade-up stagger">
+                    <i class="fas fa-leaf skill-icon express"></i>
+                    <h4>Express.js</h4>
+                </div>
+                <div class="skill-card reveal fade-up stagger">
+                    <i class="fa-solid fa-database skill-icon"></i>
+                    <h4>MongoDB</h4>
+                </div>
+                <div class="skill-card reveal fade-up stagger">
+                    <i class="fab fa-react skill-icon Reeact"></i>
+                    <h4>React</h4>
+                    <span class="learning-tag">Learning</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="projects section" id="projects">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2 class="section-title">CASE STUDY</h2>
+                <p class="section-subtitle">Detailed architectural breakdown of my primary engineering solutions.</p>
+            </div>
+
+            <div class="project-blocks">
+                <!-- Project 1 -->
+                <div class="project-block reveal">
+                    <div class="project-visual">
+                        <div class="glass-card-light overflow-hidden shadow-heavy">
+                            <div class="placeholder-img grid-bg color-1">
+                                <img src="1768660172181.jpg" alt="Exam Hall Allocation System Screenshot">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <span class="category-pill">REACT / ZEGOCLOUD</span>
+                        <h3 class="display-title">Video Call application</h3>
+                        <p>A real-time video communication application developed using ZEGOCLOUD SDK, focusing on
+                            frontend implementation and API integration to deliver seamless peer-to-peer video calls
+                            with low-latency performance.</p>
+                        <a href="https://github.com/mugunthanarjunan-glitch/Real-time-video-meeting"
+                            class="details-link"><i class="fab fa-github"></i> Source Code <i
+                                class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-block reveal">
+                    <div class="project-visual">
+                        <div class="glass-card-light overflow-hidden shadow-heavy">
+                            <div class="placeholder-img grid-bg color-2"><img src="proman.png" alt=""></div>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <span class="category-pill">NODE.JS / AUTOMATION</span>
+                        <h3 class="display-title">Project Management Tool Backend</h3>
+                        <p>A scalable backend system for managing projects, tasks, and team collaboration with
+                            role-based access control. Supports task assignment, progress tracking, and real-time
+                            updates for efficient project management.</p>
+                        <a href="https://github.com/mugunthanarjunan-glitch/project-management-tool"
+                            class="details-link"><i class="fab fa-github"></i> Source Code <i
+                                class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <!-- Project 3 -->
+                <div class="project-block reveal">
+                    <div class="project-visual">
+                        <div class="glass-card-light overflow-hidden shadow-heavy">
+                            <div class="placeholder-img grid-bg color-2"><img src="image.png" alt=""></div>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <span class="category-pill">NODE.JS / AUTOMATION</span>
+                        <h3 class="display-title">Workflow Automation System.</h3>
+                        <p>A high-performance engine that automates multi-step workflows with real-time tracking and
+                            event-driven architecture for complex business logic.</p>
+                        <a href="https://github.com/mugunthanarjunan-glitch/Workflow-Saas" class="details-link"><i
+                                class="fab fa-github"></i> Source Code <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="certificates section" id="certificates">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2 class="section-title">CERTIFICATION</h2>
+                <p class="section-subtitle">Verified professional credentials and technical achievements.</p>
+            </div>
+            <div class="certificates-grid">
+                <!-- Certificate 1 -->
+                <div class="certificate-card reveal fade-up stagger">
+                    <div class="cert-icon">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <div class="cert-content">
+                        <h4>Responsive Web Design</h4>
+                        <p class="cert-org">freeCodeCamp</p>
+                        <a href="https://freecodecamp.org/certification/mugunthanarjunan/responsive-web-design"
+                            class="verify-link">Verify <i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
+
+                <!-- Certificate 2 -->
+                <div class="certificate-card reveal fade-up stagger">
+                    <div class="cert-icon">
+                        <i class="fab fa-python"></i>
+                    </div>
+                    <div class="cert-content">
+                        <h4>Python (Basic)</h4>
+                        <p class="cert-org">HackerRank</p>
+                        <a href="https://www.hackerrank.com/certificates/397dc502c070" class="verify-link">Verify <i
+                                class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
+
+                <!-- Certificate 3 -->
+                <div class="certificate-card reveal fade-up stagger">
+                    <div class="cert-icon">
+                        <i class="fab fa-node-js"></i>
+                    </div>
+                    <div class="cert-content">
+                        <h4>Node (Basic)</h4>
+                        <p class="cert-org">HackerRank</p>
+                        <a href="https://www.hackerrank.com/certificates/9c9b311b66a9" class="verify-link">Verify <i
+                                class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact section" id="contact">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2 class="section-title">Initiate Contact</h2>
+            </div>
+            <div class="contact-wrapper">
+                <div class="contact-info reveal">
+                    <div class="glass-card info-card">
+                        <!-- <i class="fas fa-bolt glow"></i> -->
+                        <h3>Accelerate Your Workflow</h3>
+                        <p>I'm always open to discussing new projects, creative ideas or opportunities to be part of
+                            your visions.</p>
+                        <div class="social-links">
+                            <a href="https://github.com/mugunthanarjunan-glitch/Mugunthan-Arjunan"
+                                class="social-item"><i class="fab fa-github"></i></a>
+                            <a href="https://www.linkedin.com/in/mugunthan-arjunan/" class="social-item"><i
+                                    class="fab fa-linkedin"></i></a>
+
+                        </div>
+                    </div>
+                </div>
+                <form class="contact-form glass-card reveal" id="contact-form" action="https://api.web3forms.com/submit"
+                    method="POST">
+                    <!-- Web3Forms Access Key - Sign up at web3forms.com -->
+                    <input type="hidden" name="access_key" value="d1b33fa1-ab23-455e-aaa8-088bd54e8f29">
+
+                    <div class="form-group slide-in">
+                        <input type="text" id="name" name="name" required placeholder=" ">
+                        <label for="name">Your Identity (Name)</label>
+                    </div>
+                    <div class="form-group slide-in">
+                        <input type="email" id="email" name="email" required placeholder=" ">
+                        <label for="email">Hyperlink Address (Email)</label>
+                    </div>
+                    <div class="form-group slide-in">
+                        <textarea id="message" name="message" rows="5" required placeholder=" "></textarea>
+                        <label for="message">Transmission Message</label>
+                    </div>
+                    <button type="submit" id="submit-btn" class="btn btn-primary glow-cyan full-width">Transmit
+                        Message</button>
+                    <div id="form-status" class="form-status"></div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-line"></div>
+            <div class="footer-content reveal">
+                <p>&copy; 2026 Mugunthan Arjunan. All rights reserved. </p>
+                <p class="footer-tagline">Designed for the Future.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
