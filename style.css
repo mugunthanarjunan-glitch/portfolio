@@ -973,7 +973,7 @@ textarea:-webkit-autofill:focus {
     }
 
     .placeholder-img {
-        height: 280px; /* Adjusted for mobile */
+        height: 280px;
     }
 }
 
