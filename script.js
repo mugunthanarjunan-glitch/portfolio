@@ -19,7 +19,6 @@ window.addEventListener('scroll', () => {
     }
 });
 
-// Typing Animation
 const typingText = document.getElementById('typing-text');
 const words = ["Full Stack Developer", "MERN Engineer", "Problem Solver"];
 let wordIndex = 0;
