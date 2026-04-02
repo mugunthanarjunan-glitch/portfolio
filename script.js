@@ -8,7 +8,7 @@ document.addEventListener('mousemove', (e) => {
     }
 });
 
-// Scroll Progress Bar
+
 window.addEventListener('scroll', () => {
     const scrollProgress = document.getElementById('scroll-progress');
     const scrollableHeight = document.documentElement.scrollHeight - window.innerHeight;
