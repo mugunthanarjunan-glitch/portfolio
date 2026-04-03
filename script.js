@@ -50,7 +50,6 @@ function type() {
     setTimeout(type, typeSpeed);
 }
 
-// Intersection Observer for Scroll Reveals
 const revealOptions = {
     threshold: 0.1,
     rootMargin: "0px 0px -50px 0px"
@@ -72,7 +71,7 @@ const revealObserver = new IntersectionObserver((entries, observer) => {
     });
 }, revealOptions);
 
-// Navbar Scroll Toggle
+
 const navbar = document.getElementById('navbar');
 window.addEventListener('scroll', () => {
     if (window.scrollY > 100) {
