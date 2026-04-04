@@ -59,7 +59,7 @@ const revealObserver = new IntersectionObserver((entries, observer) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
             entry.target.classList.add('active');
-            // If it's a grid, trigger stagger for children
+
             if (entry.target.classList.contains('skills-grid') || entry.target.classList.contains('projects-grid')) {
                 const items = entry.target.querySelectorAll('.stagger');
                 items.forEach((item, index) => {
@@ -80,7 +80,7 @@ window.addEventListener('scroll', () => {
         navbar.classList.remove('scrolled');
     }
     
-    // Update active link based on scroll
+
     updateActiveLink();
 });
 
@@ -104,7 +104,6 @@ function updateActiveLink() {
     });
 }
 
-// Page Load Stagger
 function pageLoadAnimation() {
     const loadElements = document.querySelectorAll('.reveal-load');
     loadElements.forEach((el, index) => {
