@@ -4,323 +4,923 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mugunthan Arjunan | MERN Stack developer</title>
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2220%22 fill=%22black%22/><text y=%2270%22 x=%2250%22 text-anchor=%22middle%22 font-family=%22Arial, sans-serif%22 font-weight=%22bold%22 font-size=%2260%22 fill=%22white%22>MA</text></svg>">
-    <link rel="stylesheet" href="style.css">
-    <!-- Google Fonts -->
+    <meta name="description"
+        content="Mugunthan Arjunan — Full Stack Developer building scalable modern web experiences with clean code and elegant UI design.">
+    <title>Mugunthan Arjunan | Full Stack Developer</title>
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><defs><linearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'><stop offset='0%25' stop-color='%233b82f6'/><stop offset='100%25' stop-color='%238b5cf6'/></linearGradient></defs><rect width='100' height='100' rx='22' fill='%23f8fafc'/><text y='68' x='50' text-anchor='middle' font-family='system-ui' font-weight='700' font-size='52' fill='url(%23g)'>MA</text></svg>">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700;800&display=swap"
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap"
         rel="stylesheet">
-    <!-- Font Awesome for icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <!-- Custom Cursor -->
-    <div class="cursor-glow" id="cursor-glow"></div>
-
-    <!-- Scroll Progress Indicator -->
-    <div class="scroll-progress" id="scroll-progress"></div>
-
-    <!-- Background Animation Elements -->
-    <div class="bg-animate">
-        <div class="circle circle-1"></div>
-        <div class="circle circle-2"></div>
-        <div class="circle circle-3"></div>
+    <!-- Page Loader -->
+    <div class="loader" id="loader" aria-hidden="true">
+        <div class="loader-inner">
+            <div class="loader-ring"></div>
+            <span class="loader-text">Mugunthan Arjunan</span>
+            <div class="loader-bar"><span></span></div>
+        </div>
     </div>
 
-    <nav class="navbar" id="navbar">
-        <div class="container nav-container">
-            <a href="#" class="logo">Mugunthan Arjunan</a>
-            <ul class="nav-links">
-                <li><a href="#about" class="nav-link">About</a></li>
-                <li><a href="#skills" class="nav-link">Skills</a></li>
-                <li><a href="#certificates" class="nav-link">Certificates</a></li>
-                <li><a href="#projects" class="nav-link">Projects</a></li>
-                <li><a href="#contact" class="nav-link">Contact</a></li>
-            </ul>
-            <div class="nav-toggle" id="nav-toggle">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </div>
-    </nav>
+    <!-- Cursor Glow -->
+    <div class="cursor-glow" id="cursor-glow" aria-hidden="true"></div>
 
-    <header class="hero" id="home">
-        <div class="container hero-container">
-            <div class="hero-content">
+    <!-- Scroll Progress -->
+    <div class="scroll-progress" id="scroll-progress" role="progressbar" aria-label="Scroll progress"></div>
 
-                <h2 class="hero-greeting reveal-load">Hi, I'm</h2>
-                <h1 class="hero-name reveal-load">Mugunthan Arjunan</h1>
-                <h3 class="hero-title reveal-load">
-                    <span class="typing" id="typing-text"></span>
-                </h3>
-                <p class="hero-tagline reveal-load">I build scalable and intelligent web applications focused on
-                    performance and modern logic.</p>
-                <div class="hero-btns reveal-load">
-                    <a href="#projects" class="btn btn-primary glow-cyan">Explore My Work</a>
-                    <a href="MUGUNTHAN%20ARJUNAN%20CV.pdf" class="btn btn-secondary glow-purple" download>Download
-                        Resume</a>
-                </div>
+    <!-- Background Layers -->
+    <div class="bg-layer" aria-hidden="true">
+        <canvas id="particle-canvas"></canvas>
+        <div class="bg-grid"></div>
+        <div class="bg-noise"></div>
+        <div class="bg-orb bg-orb--blue"></div>
+        <div class="bg-orb bg-orb--purple"></div>
+        <div class="bg-orb bg-orb--cyan"></div>
+    </div>
+
+    <!-- Navbar -->
+    <header class="header">
+        <nav class="navbar" id="navbar">
+            <div class="container nav-container">
+                <a href="#home" class="logo">
+                
+                    <span class="logo-text">Mugunthan Arjunan<span class="logo-dot">
+                </a>
+                <ul class="nav-links" id="nav-links">
+                    <li><a href="#home" class="nav-link active">Home</a></li>
+                    <li><a href="#about" class="nav-link">About</a></li>
+                    <li><a href="#skills" class="nav-link">Skills</a></li>
+                    <li><a href="#projects" class="nav-link">Projects</a></li>
+                    <li><a href="#experience" class="nav-link">Experience</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+                <a href="#contact" class="btn btn-nav">Let's Talk</a>
+                <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                    <span></span><span></span><span></span>
+                </button>
             </div>
-        </div>
-        <div class="scroll-down">
-            <a href="#about">
-                <span>Scroll Down</span>
-                <i class="fas fa-chevron-down"></i>
-            </a>
-        </div>
+        </nav>
     </header>
 
-    <section class="about section" id="about">
-        <div class="container">
-            <div class="section-header reveal">
-                <h2 class="section-title">About Me</h2>
-                <p class="section-subtitle">Blending creativity with engineering logic</p>
-            </div>
-            <div class="about-grid">
-                <div class="about-img reveal">
-                    <div class="glass-card img-wrapper">
-                        <img src="profile.png" alt="Mugunthan">
-                        <div class="img-glow"></div>
+    <main>
+        <!-- Hero -->
+        <section class="hero section" id="home">
+            <div class="container hero-grid">
+                <div class="hero-content">
+                    <p class="hero-eyebrow">Hi, I'm Mugunthan Arjunan</p>
+                    <h1 class="hero-title">
+                        <span class="gradient-text">Full Stack</span> Developer
+                    </h1>
+                    <p class="hero-role">
+                        <span id="typing-text" class="typing-text"></span><span class="typing-cursor">|</span>
+                    </p>
+                    <p class="hero-desc">
+                        Building scalable modern web experiences with clean code and elegant UI design.
+                    </p>
+                    <div class="hero-actions">
+                        <a href="#projects" class="btn btn-primary">
+                            <span>View Projects</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                        <a href="/assest/docs/MUGUNTHAN ARJUNAN CV.pdf" class="btn btn-secondary" download>
+                            <i class="fas fa-download"></i>
+                            <span>Download Resume</span>
+                        </a>
+                    </div>
+                    <div class="hero-stats">
+                        <div class="stat">
+                            <strong>4+</strong>
+                            <span>Projects Shipped</span>
+                        </div>
+                        <div class="stat-divider"></div>
+                        <div class="stat">
+                            <strong>MERN</strong>
+                            <span>Stack Focus</span>
+                        </div>
+                        <div class="stat-divider"></div>
+                        <div class="stat">
+                            <strong>100%</strong>
+                            <span>Problem Driven</span>
+                        </div>
                     </div>
                 </div>
-                <div class="about-content">
-                    <div class="reveal">
-                        <h3>Full Stack Developer & MERN Engineer</h3>
-                        <p>I specialize in building robust backend architectures and sleek, interactive frontends using
-                            the MERN stack. My approach combines systematic problem solving with a keen eye for
-                            futuristic design.</p>
-                    </div>
-                    <div class="reveal">
-                        <p>Currently focused on developing advanced systems like a <strong>Workflow Automation
-                                System</strong> and an <strong>Exam Hall Allocation System</strong>, where I push the
-                            limits of Node.js and MongoDB optimization.</p>
-                    </div>
-                    <div class="about-badges reveal">
-                        <span class="badge">Backend Logic</span>
-                        <span class="badge">Problem Solving</span>
-                        <span class="badge">MERN Stack</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <section class="skills section" id="skills">
-        <div class="container">
-            <div class="section-header reveal">
-                <h2 class="section-title">Technical Mastery</h2>
-            </div>
-            <div class="skills-grid">
-                <div class="skill-card reveal fade-up stagger">
-                    <i class="fab fa-html5 skill-icon cyan html"></i>
-                    <h4>HTML</h4>
-                </div>
-                <div class="skill-card reveal fade-up stagger">
-                    <i class="fab fa-css3-alt skill-icon purple CSS"></i>
-                    <h4>CSS</h4>
-                </div>
-                <div class="skill-card reveal fade-up stagger">
-                    <i class="fab fa-js skill-icon JS"></i>
-                    <h4>JavaScript</h4>
-                </div>
-                <div class="skill-card reveal fade-up stagger">
-                    <i class="fab fa-node-js skill-icon node"></i>
-                    <h4>Node.js</h4>
-                </div>
-                <div class="skill-card reveal fade-up stagger">
-                    <i class="fas fa-leaf skill-icon express"></i>
-                    <h4>Express.js</h4>
-                </div>
-                <div class="skill-card reveal fade-up stagger">
-                    <i class="fa-solid fa-database skill-icon"></i>
-                    <h4>MongoDB</h4>
-                </div>
-                <div class="skill-card reveal fade-up stagger">
-                    <i class="fab fa-react skill-icon Reeact"></i>
-                    <h4>React</h4>
-                    <span class="learning-tag">Learning</span>
-                </div>
-            </div>
-        </div>
-    </section>
+                <div class="hero-visual">
+                    <div class="hero-image-wrap">
+                        <div class="hero-glow hero-glow--blue"></div>
+                        <div class="hero-glow hero-glow--purple"></div>
 
-    <section class="projects section" id="projects">
-        <div class="container">
-            <div class="section-header reveal">
-                <h2 class="section-title">CASE STUDY</h2>
-                <p class="section-subtitle">Detailed architectural breakdown of my primary engineering solutions.</p>
+                        <svg class="tech-orbit" viewBox="0 0 440 520" aria-hidden="true">
+                            <defs>
+                                <linearGradient id="orbitGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" stop-color="#3b82f6" stop-opacity="0.5" />
+                                    <stop offset="50%" stop-color="#8b5cf6" stop-opacity="0.35" />
+                                    <stop offset="100%" stop-color="#3b82f6" stop-opacity="0.5" />
+                                </linearGradient>
+                            </defs>
+                            <ellipse class="tech-orbit__ellipse" cx="220" cy="260" rx="188" ry="228" />
+                            <path class="tech-orbit__arc tech-orbit__arc--1"
+                                d="M 72 118 Q 220 48 368 118" />
+                            <path class="tech-orbit__arc tech-orbit__arc--2"
+                                d="M 368 118 Q 408 260 368 402" />
+                            <path class="tech-orbit__arc tech-orbit__arc--3"
+                                d="M 368 402 Q 220 472 72 402" />
+                            <path class="tech-orbit__arc tech-orbit__arc--4"
+                                d="M 72 402 Q 32 260 72 118" />
+                        </svg>
+
+                        <div class="hero-image-frame glass-card">
+                            <img src="/assest/images/profile.png" alt="Mugunthan Arjunan — Full Stack Developer"
+                                onerror="this.src='https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=700&fit=crop&q=80'">
+                        </div>
+
+                        <div class="float-icon float-icon--react" title="React">
+                            <span class="float-icon__glow"></span>
+                            <div class="float-icon__card"><i class="fab fa-react"></i></div>
+                        </div>
+                        <div class="float-icon float-icon--node" title="Node.js">
+                            <span class="float-icon__glow"></span>
+                            <div class="float-icon__card"><i class="fab fa-node-js"></i></div>
+                        </div>
+                        <div class="float-icon float-icon--mongo" title="MongoDB">
+                            <span class="float-icon__glow"></span>
+                            <div class="float-icon__card"><i class="fas fa-database"></i></div>
+                        </div>
+                        <div class="float-icon float-icon--js" title="JavaScript">
+                            <span class="float-icon__glow"></span>
+                            <div class="float-icon__card"><i class="fab fa-js"></i></div>
+                        </div>
+                        <div class="float-icon float-icon--css" title="CSS">
+                            <span class="float-icon__glow"></span>
+                            <div class="float-icon__card"><i class="fab fa-css3-alt"></i></div>
+                        </div>
+                        <div class="float-icon float-icon--git" title="Git">
+                            <span class="float-icon__glow"></span>
+                            <div class="float-icon__card"><i class="fab fa-git-alt"></i></div>
+                        </div>
+                    </div>
+                </div>
             </div>
 
-            <div class="project-blocks">
-                <!-- Project 1 -->
-                <div class="project-block reveal">
-                    <div class="project-visual">
-                        <div class="glass-card-light overflow-hidden shadow-heavy">
-                            <div class="placeholder-img grid-bg color-1">
-                                <img src="1768660172181.jpg" alt="Exam Hall Allocation System Screenshot">
+            <a href="#about" class="scroll-indicator" aria-label="Scroll to about">
+                <span class="scroll-indicator__line"></span>
+                <span class="scroll-indicator__text">Scroll</span>
+            </a>
+        </section>
+
+        <!-- About -->
+        <section class="about section" id="about">
+            <div class="about-bg" aria-hidden="true">
+                <div class="about-bg__blob about-bg__blob--1"></div>
+                <div class="about-bg__blob about-bg__blob--2"></div>
+                <div class="about-bg__grid"></div>
+                <div class="about-bg__radial"></div>
+                <span class="about-dot about-dot--1"></span>
+                <span class="about-dot about-dot--2"></span>
+                <span class="about-dot about-dot--3"></span>
+                <span class="about-sparkle about-sparkle--1"></span>
+                <span class="about-sparkle about-sparkle--2"></span>
+                <span class="about-sparkle about-sparkle--3"></span>
+            </div>
+
+            <div class="container">
+                <header class="about-header" data-aos="fade-up">
+                    <span class="about-badge">✨ About Me</span>
+                    <h2 class="about-title">Crafting Digital <span class="gradient-text">Excellence</span></h2>
+                    <div class="about-title-line" aria-hidden="true"></div>
+                    <p class="about-subtitle">Full stack engineer focused on elegant, scalable digital experiences.</p>
+                </header>
+
+                <div class="about-features">
+                    <article class="about-feature-card" data-aos="fade-up" data-aos-delay="0">
+                        <span class="about-feature-card__corner about-feature-card__corner--tl"></span>
+                        <span class="about-feature-card__corner about-feature-card__corner--br"></span>
+                        <span class="about-feature-card__shine"></span>
+                        <span class="about-feature-card__glow"></span>
+                        <div class="about-feature-card__icon-wrap about-feature-card__icon-wrap--blue">
+                            <i class="fas fa-layer-group"></i>
+                        </div>
+                        <h3 class="about-feature-card__title">MERN Stack Expertise</h3>
+                        <p class="about-feature-card__desc">End-to-end development with MongoDB, Express, React, and
+                            Node.js — from REST APIs to reactive interfaces that feel instant.</p>
+                    </article>
+
+                    <article class="about-feature-card" data-aos="fade-up" data-aos-delay="100">
+                        <span class="about-feature-card__corner about-feature-card__corner--tl"></span>
+                        <span class="about-feature-card__corner about-feature-card__corner--br"></span>
+                        <span class="about-feature-card__shine"></span>
+                        <span class="about-feature-card__glow"></span>
+                        <div class="about-feature-card__icon-wrap about-feature-card__icon-wrap--purple">
+                            <i class="fas fa-diagram-project"></i>
+                        </div>
+                        <h3 class="about-feature-card__title">Workflow Automation</h3>
+                        <p class="about-feature-card__desc">Designing event-driven automation platforms that streamline
+                            multi-step business processes with real-time tracking and reliability.</p>
+                    </article>
+
+                    <article class="about-feature-card" data-aos="fade-up" data-aos-delay="200">
+                        <span class="about-feature-card__corner about-feature-card__corner--tl"></span>
+                        <span class="about-feature-card__corner about-feature-card__corner--br"></span>
+                        <span class="about-feature-card__shine"></span>
+                        <span class="about-feature-card__glow"></span>
+                        <div class="about-feature-card__icon-wrap about-feature-card__icon-wrap--cyan">
+                            <i class="fas fa-rocket"></i>
+                        </div>
+                        <h3 class="about-feature-card__title">Scalable Applications</h3>
+                        <p class="about-feature-card__desc">Architecting full stack solutions optimized for performance,
+                            maintainability, and growth — built to handle real-world complexity.</p>
+                    </article>
+                    
+                </div>
+
+               
+            </div>
+        </section>
+
+        <!-- Skills -->
+        <section class="skills section" id="skills">
+            <div class="skills-bg" aria-hidden="true">
+                <div class="skills-bg__blob skills-bg__blob--1"></div>
+                <div class="skills-bg__blob skills-bg__blob--2"></div>
+                <div class="skills-bg__grid"></div>
+                <div class="skills-bg__radial"></div>
+                <span class="skills-dot skills-dot--1"></span>
+                <span class="skills-dot skills-dot--2"></span>
+                <span class="skills-dot skills-dot--3"></span>
+                <span class="skills-sparkle skills-sparkle--h1"></span>
+                <span class="skills-sparkle skills-sparkle--h2"></span>
+                <span class="skills-sparkle skills-sparkle--h3"></span>
+            </div>
+
+            <div class="container">
+                <header class="skills-header" data-aos="fade-up">
+                    <span class="skills-badge">✨ What I Know</span>
+                    <BR></BR>
+                    <h2 class="skills-title">Skills & <span class="gradient-text">Expertise</span></h2>
+                    <div class="skills-title-line" aria-hidden="true"></div>
+                    <p class="skills-subtitle">Technologies and tools I use to build scalable modern web applications.</p>
+                </header>
+
+                <div class="skills-showcase">
+                    <!-- Frontend -->
+                    <div class="skills-block" data-aos="fade-up">
+                        <div class="skills-block__connector" aria-hidden="true"></div>
+                        <div class="skills-block__head">
+                            <div class="skills-block__icon skills-block__icon--frontend">
+                                <i class="fas fa-palette"></i>
+                            </div>
+                            <div class="skills-block__meta">
+                                <h3 class="skills-block__title">Frontend</h3>
+                                <p class="skills-block__desc">Crafting responsive, accessible interfaces with modern frameworks.</p>
                             </div>
                         </div>
-                    </div>
-                    <div class="project-info">
-                        <span class="category-pill">REACT / ZEGOCLOUD</span>
-                        <h3 class="display-title">Video Call application</h3>
-                        <p>A real-time video communication application developed using ZEGOCLOUD SDK, focusing on
-                            frontend implementation and API integration to deliver seamless peer-to-peer video calls
-                            with low-latency performance.</p>
-                        <a href="https://github.com/mugunthanarjunan-glitch/Real-time-video-meeting"
-                            class="details-link"><i class="fab fa-github"></i> Source Code <i
-                                class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
-
-                <!-- Project 2 -->
-                <div class="project-block reveal">
-                    <div class="project-visual">
-                        <div class="glass-card-light overflow-hidden shadow-heavy">
-                            <div class="placeholder-img grid-bg color-2"><img src="proman.png" alt=""></div>
+                        <div class="skills-block__grid">
+                            <article class="skill-item" data-level="5">
+                                <span class="skill-item__glow"></span>
+                                <div class="skill-item__icon skill-item__icon--html"><i class="fab fa-html5"></i></div>
+                                <h4 class="skill-item__name">HTML</h4>
+                                <p class="skill-item__sub">Semantic Markup</p>
+                                <div class="skill-item__dots" aria-hidden="true"></div>
+                            </article>
+                            <article class="skill-item" data-level="5">
+                                <span class="skill-item__glow"></span>
+                                <div class="skill-item__icon skill-item__icon--css"><i class="fab fa-css3-alt"></i></div>
+                                <h4 class="skill-item__name">CSS</h4>
+                                <p class="skill-item__sub">Modern Styling</p>
+                                <div class="skill-item__dots" aria-hidden="true"></div>
+                            </article>
+                            <article class="skill-item" data-level="5">
+                                <span class="skill-item__glow"></span>
+                                <div class="skill-item__icon skill-item__icon--js"><i class="fab fa-js"></i></div>
+                                <h4 class="skill-item__name">JavaScript</h4>
+                                <p class="skill-item__sub">Dynamic Logic</p>
+                                <div class="skill-item__dots" aria-hidden="true"></div>
+                            </article>
+                            
+                            <article class="skill-item" data-level="4">
+                                <span class="skill-item__glow"></span>
+                                <div class="skill-item__icon skill-item__icon--react"><i class="fab fa-react"></i></div>
+                                <h4 class="skill-item__name">React</h4>
+                                <p class="skill-item__sub">UI Library</p>
+                                <div class="skill-item__dots" aria-hidden="true"></div>
+                            </article>
                         </div>
                     </div>
-                    <div class="project-info">
-                        <span class="category-pill">NODE.JS / AUTOMATION</span>
-                        <h3 class="display-title">Project Management Tool Backend</h3>
-                        <p>A scalable backend system for managing projects, tasks, and team collaboration with
-                            role-based access control. Supports task assignment, progress tracking, and real-time
-                            updates for efficient project management.</p>
-                        <a href="https://github.com/mugunthanarjunan-glitch/project-management-tool"
-                            class="details-link"><i class="fab fa-github"></i> Source Code <i
-                                class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
-                <!-- Project 3 -->
-                <div class="project-block reveal">
-                    <div class="project-visual">
-                        <div class="glass-card-light overflow-hidden shadow-heavy">
-                            <div class="placeholder-img grid-bg color-2"><img src="image.png" alt=""></div>
+
+                    <!-- Backend -->
+                    <div class="skills-block" data-aos="fade-up" data-aos-delay="80">
+                        <div class="skills-block__connector" aria-hidden="true"></div>
+                        <div class="skills-block__head">
+                            <div class="skills-block__icon skills-block__icon--backend">
+                                <i class="fas fa-server"></i>
+                            </div>
+                            <div class="skills-block__meta">
+                                <h3 class="skills-block__title">Backend</h3>
+                                <p class="skills-block__desc">Building robust APIs, databases, and scalable server architecture.</p>
+                            </div>
+                        </div>
+                        <div class="skills-block__grid skills-block__grid--3">
+                            <article class="skill-item" data-level="5">
+                                <span class="skill-item__glow"></span>
+                                <div class="skill-item__icon skill-item__icon--node"><i class="fab fa-node-js"></i></div>
+                                <h4 class="skill-item__name">Node.js</h4>
+                                <p class="skill-item__sub">JavaScript Runtime</p>
+                                <div class="skill-item__dots" aria-hidden="true"></div>
+                            </article>
+                            <article class="skill-item" data-level="5">
+                                <span class="skill-item__glow"></span>
+                                <div class="skill-item__icon skill-item__icon--express"><i class="fas fa-bolt"></i></div>
+                                <h4 class="skill-item__name">Express.js</h4>
+                                <p class="skill-item__sub">API Framework</p>
+                                <div class="skill-item__dots" aria-hidden="true"></div>
+                            </article>
+                            <article class="skill-item" data-level="4">
+                                <span class="skill-item__glow"></span>
+                                <div class="skill-item__icon skill-item__icon--mongo"><i class="fas fa-database"></i></div>
+                                <h4 class="skill-item__name">MongoDB</h4>
+                                <p class="skill-item__sub">NoSQL Database</p>
+                                <div class="skill-item__dots" aria-hidden="true"></div>
+                            </article>
                         </div>
                     </div>
-                    <div class="project-info">
-                        <span class="category-pill">NODE.JS / AUTOMATION</span>
-                        <h3 class="display-title">Workflow Automation System.</h3>
-                        <p>A high-performance engine that automates multi-step workflows with real-time tracking and
-                            event-driven architecture for complex business logic.</p>
-                        <a href="https://github.com/mugunthanarjunan-glitch/Workflow-Saas" class="details-link"><i
-                                class="fab fa-github"></i> Source Code <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <section class="certificates section" id="certificates">
-        <div class="container">
-            <div class="section-header reveal">
-                <h2 class="section-title">CERTIFICATION</h2>
-                <p class="section-subtitle">Verified professional credentials and technical achievements.</p>
-            </div>
-            <div class="certificates-grid">
-                <!-- Certificate 1 -->
-                <div class="certificate-card reveal fade-up stagger">
-                    <div class="cert-icon">
-                        <i class="fas fa-laptop-code"></i>
-                    </div>
-                    <div class="cert-content">
-                        <h4>Responsive Web Design</h4>
-                        <p class="cert-org">freeCodeCamp</p>
-                        <a href="https://freecodecamp.org/certification/mugunthanarjunan/responsive-web-design"
-                            class="verify-link">Verify <i class="fas fa-external-link-alt"></i></a>
-                    </div>
-                </div>
-
-                <!-- Certificate 2 -->
-                <div class="certificate-card reveal fade-up stagger">
-                    <div class="cert-icon">
-                        <i class="fab fa-python"></i>
-                    </div>
-                    <div class="cert-content">
-                        <h4>Python (Basic)</h4>
-                        <p class="cert-org">HackerRank</p>
-                        <a href="https://www.hackerrank.com/certificates/397dc502c070" class="verify-link">Verify <i
-                                class="fas fa-external-link-alt"></i></a>
-                    </div>
-                </div>
-
-                <!-- Certificate 3 -->
-                <div class="certificate-card reveal fade-up stagger">
-                    <div class="cert-icon">
-                        <i class="fab fa-node-js"></i>
-                    </div>
-                    <div class="cert-content">
-                        <h4>Node (Basic)</h4>
-                        <p class="cert-org">HackerRank</p>
-                        <a href="https://www.hackerrank.com/certificates/9c9b311b66a9" class="verify-link">Verify <i
-                                class="fas fa-external-link-alt"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="contact section" id="contact">
-        <div class="container">
-            <div class="section-header reveal">
-                <h2 class="section-title">Initiate Contact</h2>
-            </div>
-            <div class="contact-wrapper">
-                <div class="contact-info reveal">
-                    <div class="glass-card info-card">
-                        <!-- <i class="fas fa-bolt glow"></i> -->
-                        <h3>Accelerate Your Workflow</h3>
-                        <p>I'm always open to discussing new projects, creative ideas or opportunities to be part of
-                            your visions.</p>
-                        <div class="social-links">
-                            <a href="https://github.com/mugunthanarjunan-glitch/Mugunthan-Arjunan"
-                                class="social-item"><i class="fab fa-github"></i></a>
-                            <a href="https://www.linkedin.com/in/mugunthan-arjunan/" class="social-item"><i
-                                    class="fab fa-linkedin"></i></a>
-
+                    <!-- Tools -->
+                    <div class="skills-block" data-aos="fade-up" data-aos-delay="160">
+                        <div class="skills-block__head">
+                            <div class="skills-block__icon skills-block__icon--tools">
+                                <i class="fas fa-toolbox"></i>
+                            </div>
+                            <div class="skills-block__meta">
+                                <h3 class="skills-block__title">Tools</h3>
+                                <p class="skills-block__desc">Workflow essentials for development, testing, and deployment.</p>
+                            </div>
+                        </div>
+                        <div class="skills-block__grid skills-block__grid--4">
+                            <article class="skill-item" data-level="5">
+                                <span class="skill-item__glow"></span>
+                                <div class="skill-item__icon skill-item__icon--github"><i class="fab fa-github"></i></div>
+                                <h4 class="skill-item__name">GitHub</h4>
+                                <p class="skill-item__sub">Version Control</p>
+                                <div class="skill-item__dots" aria-hidden="true"></div>
+                            </article>
+                            <article class="skill-item" data-level="5">
+                                <span class="skill-item__glow"></span>
+                                <div class="skill-item__icon skill-item__icon--vscode"><i class="fas fa-code"></i></div>
+                                <h4 class="skill-item__name">VS Code</h4>
+                                <p class="skill-item__sub">Code Editor</p>
+                                <div class="skill-item__dots" aria-hidden="true"></div>
+                            </article>
+                            <article class="skill-item" data-level="4">
+                                <span class="skill-item__glow"></span>
+                                <div class="skill-item__icon skill-item__icon--postman"><i class="fas fa-paper-plane"></i></div>
+                                <h4 class="skill-item__name">Postman</h4>
+                                <p class="skill-item__sub">API Testing</p>
+                                <div class="skill-item__dots" aria-hidden="true"></div>
+                            </article>
+                            <article class="skill-item" data-level="4">
+                                <span class="skill-item__glow"></span>
+                                <div class="skill-item__icon skill-item__icon--firebase"><i class="fas fa-fire"></i></div>
+                                <h4 class="skill-item__name">Firebase</h4>
+                                <p class="skill-item__sub">Cloud Platform</p>
+                                <div class="skill-item__dots" aria-hidden="true"></div>
+                            </article>
                         </div>
                     </div>
                 </div>
-                <form class="contact-form glass-card reveal" id="contact-form" action="https://api.web3forms.com/submit"
-                    method="POST">
-                    <!-- Web3Forms Access Key - Sign up at web3forms.com -->
-                    <input type="hidden" name="access_key" value="d1b33fa1-ab23-455e-aaa8-088bd54e8f29">
+            </div>
+        </section>
 
-                    <div class="form-group slide-in">
-                        <input type="text" id="name" name="name" required placeholder=" ">
-                        <label for="name">Your Identity (Name)</label>
-                    </div>
-                    <div class="form-group slide-in">
-                        <input type="email" id="email" name="email" required placeholder=" ">
-                        <label for="email">Hyperlink Address (Email)</label>
-                    </div>
-                    <div class="form-group slide-in">
-                        <textarea id="message" name="message" rows="5" required placeholder=" "></textarea>
-                        <label for="message">Transmission Message</label>
-                    </div>
-                    <button type="submit" id="submit-btn" class="btn btn-primary glow-cyan full-width">Transmit
-                        Message</button>
-                    <div id="form-status" class="form-status"></div>
-                </form>
+        <!-- Projects -->
+        <section class="projects section" id="projects">
+            <div class="projects-bg" aria-hidden="true">
+                <div class="projects-bg__blob projects-bg__blob--1"></div>
+                <div class="projects-bg__blob projects-bg__blob--2"></div>
+                <div class="projects-bg__grid"></div>
+                <div class="projects-bg__glow"></div>
+                <span class="projects-sparkle projects-sparkle--1"></span>
+                <span class="projects-sparkle projects-sparkle--2"></span>
+                <span class="projects-sparkle projects-sparkle--3"></span>
+                <span class="projects-sparkle projects-sparkle--4"></span>
+            </div>
+
+            <div class="container">
+                <header class="projects-header" data-aos="fade-up">
+                    <span class="projects-badge">My Work</span>
+                    <h2 class="projects-title">Featured <span class="gradient-text">Projects</span></h2>
+                    <div class="projects-title-line" aria-hidden="true"></div>
+                    <p class="projects-subtitle">Premium full stack products — engineered with clarity, scale, and
+                        modern SaaS-grade experiences.</p>
+                </header>
+
+                <div class="projects-showcase">
+                    <!-- Project 1 -->
+                    <article class="project-showcase-card" data-aos="fade-up">
+                        <div class="project-showcase-card__glow"></div>
+                        <div class="project-showcase-card__accent"></div>
+                        <div class="project-showcase-card__inner">
+                            <div class="project-showcase-card__visual">
+                                <div class="project-visual__blob"></div>
+                                <div class="project-visual__frame">
+                                    <img src="/assest//images/hall-allocation.png" alt="Exam Hall Allocation System dashboard"
+                                        onerror="this.src='https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&h=750&fit=crop&q=85'">
+                                    <div class="project-visual__shine"></div>
+                                    <div class="project-mini-ui project-mini-ui--chart">
+                                        <span class="project-mini-ui__bar"></span>
+                                        <span class="project-mini-ui__bar"></span>
+                                        <span class="project-mini-ui__bar"></span>
+                                    </div>
+                                    <div class="project-mini-ui project-mini-ui--stat">
+                                        <i class="fas fa-check-circle"></i>
+                                        <span>98% allocated</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="project-showcase-card__content">
+                                <span class="project-category">Education · SaaS</span>
+                                <h3 class="project-name">Exam Hall Allocation System</h3>
+                                <p class="project-desc">Intelligent seating allocation engine with conflict resolution,
+                                    hall optimization, and admin dashboards built for academic institutions at scale.</p>
+                                <div class="project-tags">
+                                    <span>HTML</span>
+                                    <span>CSS</span>
+                                    <span>JavaScript</span>
+                                </div>
+                                <div class="project-actions">
+                                    <a href="https://github.com/mugunthanarjunan-glitch/ESEC-HALL-ALLOCATOR" target="_blank" rel="noopener"
+                                        class="project-btn project-btn--github">
+                                        <i class="fab fa-github"></i> GitHub
+                                    </a>
+                                    <a href="https://esec-hall-allocator.vercel.app/" class="project-btn project-btn--demo">
+                                        Live Demo <i class="fas fa-arrow-up-right-from-square"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <a href="https://github.com/mugunthanarjunan-glitch" target="_blank" rel="noopener"
+                                class="project-arrow" aria-label="View Exam Hall Allocation System">
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </article>
+                    
+                    <article class="project-showcase-card" data-aos="fade-up">
+    <div class="project-showcase-card__glow"></div>
+    <div class="project-showcase-card__accent"></div>
+
+    <div class="project-showcase-card__inner">
+
+        <div class="project-showcase-card__visual">
+            <div class="project-visual__blob"></div>
+
+            <div class="project-visual__frame">
+                <img src="/assest/images/rag-project.png"
+                    alt="AI RAG Chatbot System"
+                    onerror="this.src='https://images.unsplash.com/photo-1677442136019-21780ecad995?w=1200&h=750&fit=crop&q=85'">
+
+                <div class="project-visual__shine"></div>
+
+                <div class="project-mini-ui project-mini-ui--chart">
+                    <span class="project-mini-ui__bar"></span>
+                    <span class="project-mini-ui__bar"></span>
+                    <span class="project-mini-ui__bar"></span>
+                </div>
+
+                <div class="project-mini-ui project-mini-ui--stat">
+                    <i class="fas fa-robot"></i>
+                    <span>AI Powered</span>
+                </div>
             </div>
         </div>
-    </section>
 
+        <div class="project-showcase-card__content">
+
+            <span class="project-category">AI · RAG · Full Stack</span>
+
+            <h3 class="project-name">
+                RAG-Based AI Assistant
+            </h3>
+
+            <p class="project-desc">
+                Intelligent Retrieval-Augmented Generation system that combines vector search,
+                semantic retrieval, and LLM-powered responses to deliver accurate,
+                context-aware answers from custom knowledge bases and documents.
+            </p>
+
+            <div class="project-tags">
+                <span>React</span>
+                <span>Node.js</span>
+                <span>MongoDB</span>
+                <span>LLM</span>
+                <span>Vector DB</span>
+            </div>
+
+            <div class="project-actions">
+
+                <a href="https://github.com/mugunthanarjunan-glitch/SOP-agent"
+                    target="_blank"
+                    rel="noopener"
+                    class="project-btn project-btn--github">
+
+                    <i class="fab fa-github"></i> GitHub
+                </a>
+
+                <a href="https://sop-agent-rho.vercel.app/"
+                    class="project-btn project-btn--demo">
+
+                    Live Demo
+                    <i class="fas fa-arrow-up-right-from-square"></i>
+                </a>
+
+            </div>
+        </div>
+
+        <a href="https://github.com/mugunthanarjunan-glitch/SOP-agent"
+            target="_blank"
+            rel="noopener"
+            class="project-arrow"
+            aria-label="View RAG AI Assistant">
+
+            <i class="fas fa-arrow-right"></i>
+        </a>
+
+    </div>
+</article>
+                    <!-- Project 2 -->
+                    <article class="project-showcase-card project-showcase-card--reverse" data-aos="fade-up"
+                        data-aos-delay="120">
+                        <div class="project-showcase-card__glow"></div>
+                        <div class="project-showcase-card__accent"></div>
+                        <div class="project-showcase-card__inner">
+                            <div class="project-showcase-card__visual">
+                                <div class="project-visual__blob project-visual__blob--purple"></div>
+                                <div class="project-visual__frame">
+                                    <img src="/assest//images//workflow-project.png" alt="Workflow Automation Platform dashboard"
+                                        onerror="this.src='https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&h=750&fit=crop&q=85'">
+                                    <div class="project-visual__shine"></div>
+                                    <div class="project-mini-ui project-mini-ui--flow">
+                                        <span></span><span></span><span></span>
+                                    </div>
+                                    <div class="project-mini-ui project-mini-ui--badge">
+                                        <i class="fas fa-bolt"></i> UNDER DEV
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="project-showcase-card__content">
+                                <span class="project-category">Automation · SaaS</span>
+                                <h3 class="project-name">Workflow Automation Platform</h3>
+                                <p class="project-desc">Event-driven engine that automates multi-step workflows with
+                                    real-time tracking, triggers, and a scalable Node.js architecture for modern teams.</p>
+                                <div class="project-tags">
+                                    <span>Node.js</span>
+                                    <span>React</span>
+                                    <span>MongoDB</span>
+                                    <span>Webhooks</span>
+                                </div>
+                                <div class="project-actions">
+                                    <a href="https://github.com/mugunthanarjunan-glitch/Workflow-Saas" target="_blank"
+                                        rel="noopener" class="project-btn project-btn--github">
+                                        <i class="fab fa-github"></i> GitHub
+                                    </a>
+                                    
+                                </div>
+                            </div>
+                            
+                            </a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience -->
+        <section class="experience section" id="experience">
+            <div class="experience-bg" aria-hidden="true">
+                <div class="experience-bg__grid"></div>
+                <div class="experience-bg__radial"></div>
+                <div class="experience-bg__blob experience-bg__blob--blue"></div>
+                <div class="experience-bg__blob experience-bg__blob--purple"></div>
+                <span class="experience-dot experience-dot--1"></span>
+                <span class="experience-dot experience-dot--2"></span>
+                <span class="experience-dot experience-dot--3"></span>
+                <span class="experience-sparkle experience-sparkle--1"></span>
+                <span class="experience-sparkle experience-sparkle--2"></span>
+                <span class="experience-sparkle experience-sparkle--3"></span>
+            </div>
+            <div class="container">
+                <header class="experience-header" data-aos="fade-up">
+                    <span class="experience-badge">✨ Experience</span>
+                    <h2 class="experience-title">
+                        Career <span class="gradient-text">Timeline</span>
+                        <span class="experience-heading-sparkle experience-heading-sparkle--1"></span>
+                        <span class="experience-heading-sparkle experience-heading-sparkle--2"></span>
+                    </h2>
+                    <div class="experience-title-line" aria-hidden="true"></div>
+                    <p class="experience-subtitle">My journey building scalable products and modern digital experiences.</p>
+                </header>
+
+                <div class="timeline-wrap">
+                    <div class="timeline">
+                        <span class="timeline-progress" aria-hidden="true"></span>
+
+                        <article class="timeline-item" data-aos="fade-up">
+                            <div class="timeline-marker" aria-hidden="true">
+                                <span></span>
+                            </div>
+                            <div class="timeline-content">
+                                <span class="timeline-shine" aria-hidden="true"></span>
+                                <span class="timeline-spark timeline-spark--1" aria-hidden="true"></span>
+                                <span class="timeline-spark timeline-spark--2" aria-hidden="true"></span>
+
+                                <div class="timeline-card-head">
+                                    <span class="timeline-date">2025 — Present</span>
+                                    <span class="timeline-icon"><i class="fas fa-layer-group"></i></span>
+                                </div>
+                                <h3>Full Stack Developer</h3>
+                                <p class="timeline-org">Independent / Freelance Projects</p>
+                                <p class="timeline-desc">Building MERN stack applications, workflow automation SaaS systems, and scalable allocation platforms with focus on modern UI and APIs.</p>
+                                <div class="timeline-tags" aria-label="Tech stack">
+                                    <span>React</span>
+                                    <span>Node.js</span>
+                                    <span>MongoDB</span>
+                                    <span>Express</span>
+                                    <span>JavaScript</span>
+                                </div>
+                                <div class="timeline-highlights">
+                                    <span><i class="fas fa-bolt"></i> SaaS workflows</span>
+                                    <span><i class="fas fa-code-branch"></i> API systems</span>
+                                    <span><i class="fas fa-chart-line"></i> Scalable products</span>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="timeline-item" data-aos="fade-up" data-aos-delay="200">
+                            <div class="timeline-marker" aria-hidden="true">
+                                <span></span>
+                            </div>
+                            <div class="timeline-content">
+                                <span class="timeline-shine" aria-hidden="true"></span>
+                                <span class="timeline-spark timeline-spark--1" aria-hidden="true"></span>
+                                <span class="timeline-spark timeline-spark--2" aria-hidden="true"></span>
+
+                                <div class="timeline-card-head">
+                                    <span class="timeline-date">Learning & Exploration</span>
+                                    <span class="timeline-icon"><i class="fas fa-compass"></i></span>
+                                </div>
+                                <h3>Open Source & Self Learning</h3>
+                                <p class="timeline-org">Continuous Growth</p>
+                                <p class="timeline-desc">Continuously improving problem-solving, backend architecture, APIs, and scalable full stack systems.</p>
+                                <div class="timeline-tags" aria-label="Focus areas">
+                                    <span>DSA</span>
+                                    <span>APIs</span>
+                                    <span>Architecture</span>
+                                    <span>GitHub</span>
+                                    <span>System Design</span>
+                                </div>
+                                <div class="timeline-highlights">
+                                    <span><i class="fas fa-brain"></i> Problem solving</span>
+                                    <span><i class="fas fa-server"></i> Backend depth</span>
+                                    <span><i class="fas fa-infinity"></i> Continuous learning</span>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact -->
+        <section class="contact section" id="contact">
+            <div class="contact-bg" aria-hidden="true">
+                <div class="contact-bg__grid"></div>
+                <div class="contact-bg__radial"></div>
+                <div class="contact-bg__blob contact-bg__blob--blue"></div>
+                <div class="contact-bg__blob contact-bg__blob--purple"></div>
+                <span class="contact-sparkle contact-sparkle--1"></span>
+                <span class="contact-sparkle contact-sparkle--2"></span>
+                <span class="contact-sparkle contact-sparkle--3"></span>
+            </div>
+
+            <div class="container">
+                <div class="section-header" data-aos="fade-up">
+                    <span class="section-tag">Contact</span>
+                    <h2 class="section-title">Let's Build <span class="gradient-text">Together</span></h2>
+                    <div class="contact-title-line" aria-hidden="true"></div>
+                    <p class="section-subtitle">Have a project in mind? Let's create scalable digital experiences together.</p>
+                </div>
+
+                <div class="contact-grid">
+                    <div class="contact-info" data-aos="fade-right">
+                        <div class="contact-info__glow" aria-hidden="true"></div>
+                        <span class="contact-info__spark contact-info__spark--1" aria-hidden="true"></span>
+                        <span class="contact-info__spark contact-info__spark--2" aria-hidden="true"></span>
+                        <div class="contact-info__icon">
+                            <i class="fas fa-paper-plane"></i>
+                        </div>
+                        <h3>Get In Touch</h3>
+                        <p>Open to full-time roles, freelance collaborations, and product ideas that need clean engineering and elegant interfaces.</p>
+                        <ul class="contact-details">
+                            <li>
+                                <a href="mailto:mugunthanarjunan@gmail.com">
+                                    <span class="contact-detail__icon"><i class="fas fa-envelope"></i></span>
+                                    <span>
+                                        <strong>Email</strong>
+                                        <small>mugunthanarjunan@gmail.com</small>
+                                    </span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://github.com/mugunthanarjunan-glitch" target="_blank" rel="noopener">
+                                    <span class="contact-detail__icon"><i class="fab fa-github"></i></span>
+                                    <span>
+                                        <strong>GitHub</strong>
+                                        <small>mugunthanarjunan-glitch</small>
+                                    </span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.linkedin.com/in/mugunthan-arjunan/" target="_blank" rel="noopener">
+                                    <span class="contact-detail__icon"><i class="fab fa-linkedin-in"></i></span>
+                                    <span>
+                                        <strong>LinkedIn</strong>
+                                        <small>mugunthan-arjunan</small>
+                                    </span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/assest/docs/MUGUNTHAN ARJUNAN CV.pdf" download>
+                                    <span class="contact-detail__icon"><i class="fas fa-file-arrow-down"></i></span>
+                                    <span>
+                                        <strong>Resume</strong>
+                                        <small>Download CV</small>
+                                    </span>
+                                </a>
+                            </li>
+                        </ul>
+                        <div class="availability-badge">
+                            <span></span>
+                            Available for opportunities
+                        </div>
+                    </div>
+
+                    <form class="contact-form" id="contact-form" data-aos="fade-left">
+                        <div class="contact-form__glow" aria-hidden="true"></div>
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="from_name" required placeholder="Your name"
+                                autocomplete="name">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="reply_to" required placeholder="you@email.com"
+                                autocomplete="email">
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" name="subject" required placeholder="Project, role, or idea">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="5" required
+                                placeholder="Tell me about your project..."></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-submit" id="submit-btn">
+                            <span class="btn-text">Send Message</span>
+                            <span class="btn-loader" aria-hidden="true"></span>
+                        </button>
+                        <p class="form-status" id="form-status" role="status"></p>
+                        <!-- EmailJS: Replace YOUR_PUBLIC_KEY, YOUR_SERVICE_ID, YOUR_TEMPLATE_ID in script.js -->
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
     <footer class="footer">
+        <div class="footer-bg" aria-hidden="true">
+            <div class="footer-bg__grid"></div>
+            <div class="footer-bg__glow footer-bg__glow--blue"></div>
+            <div class="footer-bg__glow footer-bg__glow--purple"></div>
+            <span class="footer-sparkle footer-sparkle--1"></span>
+            <span class="footer-sparkle footer-sparkle--2"></span>
+            <span class="footer-sparkle footer-sparkle--3"></span>
+        </div>
+
         <div class="container">
-            <div class="footer-line"></div>
-            <div class="footer-content reveal">
-                <p>&copy; 2026 Mugunthan Arjunan. All rights reserved. </p>
-                <p class="footer-tagline">Designed for the Future.</p>
+            <div class="footer-card" data-aos="fade-up">
+                <div class="footer-card__glow" aria-hidden="true"></div>
+                <div class="footer-main">
+                    <div class="footer-brand-block">
+                        <a href="#home" class="footer-brand">
+                            <span class="footer-logo">M</span>
+                            <span class="footer-brand-text">Mugunthan Arjunan<span>.dev</span></span>
+                        </a>
+                        <p class="footer-tagline">Building scalable digital experiences with elegant engineering.</p>
+                    </div>
+
+                    <nav class="footer-nav" aria-label="Footer navigation">
+                        <h3>Navigate</h3>
+                        <div class="footer-nav__links">
+                            <a href="#home">Home</a>
+                            <a href="#about">About</a>
+                            <a href="#skills">Skills</a>
+                            <a href="#projects">Projects</a>
+                            <a href="#experience">Experience</a>
+                            <a href="#contact">Contact</a>
+                        </div>
+                    </nav>
+
+                    <div class="footer-connect">
+                        <h3>Connect</h3>
+                        <div class="footer-social">
+                            <a href="https://github.com/mugunthanarjunan-glitch" target="_blank" rel="noopener"
+                                aria-label="GitHub"><i class="fab fa-github"></i></a>
+                            <a href="https://www.linkedin.com/in/mugunthan-arjunan/" target="_blank" rel="noopener"
+                                aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="mailto:mugunthanarjunan@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                            <a href="/assest/docs/MUGUNTHAN ARJUNAN CV.pdf" download aria-label="Download Resume"><i class="fas fa-file-arrow-down"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="footer-divider" aria-hidden="true"></div>
+
+                <div class="footer-bottom">
+                    <p class="footer-copy">&copy; 2026 Mugunthan Arjunan. Crafted with precision and modern engineering.</p>
+                    
+                </div>
             </div>
         </div>
     </footer>
 
+    <!-- Back to Top -->
+    <button class="back-to-top" id="back-to-top" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <script src="script.js"></script>
 </body>
 
 </html>
+
+
+ <!-- <div class="about-panel" data-aos="fade-up">
+                    <div class="about-panel__mouse-glow" aria-hidden="true"></div>
+                    <div class="about-panel__blob about-panel__blob--1" aria-hidden="true"></div>
+                    <div class="about-panel__blob about-panel__blob--2" aria-hidden="true"></div>
+                    <div class="about-panel__line" aria-hidden="true"></div>
+                    <div class="about-panel__inner">
+                        <div class="about-panel__intro">
+                            <span class="about-panel__label">Who I Am</span>
+                            <p>I'm a passionate <span class="text-gradient">full stack developer</span> who bridges
+                                elegant frontends with robust backends. From exam allocation systems to SaaS workflow
+                                engines, I turn complex requirements into clean, production-ready code.</p>
+                            <p>My strength lies in <span class="text-gradient">problem solving</span> — breaking down
+                                challenges, optimizing databases, and delivering interfaces that recruiters and users
+                                remember.</p>
+                        </div>
+                        <div class="about-panel__checks">
+                            <div class="about-check">
+                                <span class="about-check__icon"><i class="fas fa-check"></i></span>
+                                <span>Full stack MERN development</span>
+                            </div>
+                            <div class="about-check">
+                                <span class="about-check__icon"><i class="fas fa-check"></i></span>
+                                <span>Workflow & business automation</span>
+                            </div>
+                            <div class="about-check">
+                                <span class="about-check__icon"><i class="fas fa-check"></i></span>
+                                <span>Scalable API architecture</span>
+                            </div>
+                            <div class="about-check">
+                                <span class="about-check__icon"><i class="fas fa-check"></i></span>
+                                <span>Clean UI/UX focused development</span>
+                            </div>
+                            <div class="about-check">
+                                <span class="about-check__icon"><i class="fas fa-check"></i></span>
+                                <span>Real-world production systems</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="about-panel__float about-panel__float--1" aria-hidden="true"></div>
+                    <div class="about-panel__float about-panel__float--2" aria-hidden="true"></div>
+                </div>
+
+                <div class="about-cta" data-aos="fade-up" data-aos-delay="80">
+                    <div class="about-cta__glow" aria-hidden="true"></div>
+                    <div class="about-cta__inner">
+                        <h3 class="about-cta__title">Building scalable products with elegant engineering.</h3>
+                        <p class="about-cta__text">Focused on performance, maintainability, and modern user experiences.</p>
+                    </div>
+                </div> -->
